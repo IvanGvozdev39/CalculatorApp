@@ -94,8 +94,6 @@ class MainActivity : AppCompatActivity() {
                     canAddOperation = false
                     canAddPercent = false
                     canAddNumber = true
-                    if (digitsOps.size <= 2)
-                        workingsET.startAnimation(slideLeftAnim)
                     canSlideUp = true
 
                     workingsET.setSelection(workingsET.text.length)
@@ -141,7 +139,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun resultsTVformat(s: String): String {
-        if (s == getString(R.string.cant_divide_by_zero))
+        if (s == getString(R.string.cant_divide_by_zero) || s.isEmpty())
             return s
 
         val bigDecimal = BigDecimal(s)
@@ -387,7 +385,10 @@ class MainActivity : AppCompatActivity() {
                 workingsET.setText("0-${digitsOperators[0]}")
                 resultsTV.text = resultsTVformat(calculateResults())
                 adjustTextSize(resultsTV, resultsTV.text.toString())
-            } else if (digitsOperators.last() is BigDecimal || digitsOperators.last() == '%') {
+            } else if (digitsOperators.size == 2 && digitsOperators[1] == '%') {
+                workingsET.setText("0-${digitsOperators[0].toString().toFloat()/100}")
+            }
+            else if (digitsOperators.last() is BigDecimal || digitsOperators.last() == '%') {
                 val previousIndex = digitsOperators.lastIndex -
                         if (digitsOperators.last() != '%') 1 else 2
 
