@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttonNumber">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="background">@color/gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:onClick">numberAction</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="buttonOperator">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="background">@color/gray</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:onClick">operationAction</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Theme.Splash_Screen" parent="Theme.CalculatorApp">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+</resources>

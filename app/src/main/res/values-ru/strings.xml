@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CalculatorApp</string>
+    <string name="cant_divide_by_zero">Нельзя делить на 0</string>
+    <string name="show_me">Перейти</string>
+    <string name="another_time">В другой раз</string>
+</resources>
